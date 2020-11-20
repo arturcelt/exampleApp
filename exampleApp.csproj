@@ -25,19 +25,26 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\core\form.component.ts" />
+    <None Remove="ClientApp\src\app\core\table.component.ts" />
+    <None Remove="ClientApp\src\app\model\model.module.ts" />
     <None Remove="ClientApp\src\app\model\product.model.ts" />
     <None Remove="ClientApp\src\app\model\repository.model.ts" />
+    <None Remove="ClientApp\src\app\model\sharedState.model.ts" />
     <None Remove="ClientApp\src\app\model\static.datasource.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\src\app\core\" />
     <Folder Include="ClientApp\src\app\messages\" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\core\form.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\core\table.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\model\model.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\model\product.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\model\repository.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\core\sharedState.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\model\static.datasource.ts" />
   </ItemGroup>
 
