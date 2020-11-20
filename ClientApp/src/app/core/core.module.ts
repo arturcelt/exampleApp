@@ -9,7 +9,9 @@ import { SharedState } from "./sharedState.model";
 @NgModule({
   imports: [BrowserModule, FormsModule, ModelModule],
   declarations: [TableComponent, FormComponent],
-  exports: [ModelModule, TableComponent, FormComponent]
+  exports: [ModelModule, TableComponent, FormComponent],
   providers: [SharedState]
 })
 export class CoreModule { }
+
+
