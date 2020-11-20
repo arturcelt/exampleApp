@@ -1,34 +1,36 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { LOCALE_ID } from '@angular/core';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
-
-import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { ModelModule } from "./model/model.module";
+import { CoreModule } from "./core/core.module";
+import { TableComponent } from "./core/table.component";
+import { FormComponent } from "./core/form.component";
+import { MessageModule } from "./messages/message.module";
+import { MessageComponent } from "./messages/message.component";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavMenuComponent,
-    HomeComponent,
-    CounterComponent,
-    FetchDataComponent
+    
   ],
-  imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
-    HttpClientModule,
-    FormsModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
-    ])
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, ModelModule, CoreModule, MessageModule],
+  providers: [{provide: LOCALE_ID, useValue: "pl-PL"}],
+  bootstrap: [TableComponent, FormComponent, MessageComponent]
 })
 export class AppModule { }
+
+
+
+
+
+
+//@NgModule({
+//  declarations: [
+
+//  ],
+//  imports: [
+//    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' })
+//  ],
+//  providers: [],
+//  bootstrap: []
+//})
+//export class AppModule { }
