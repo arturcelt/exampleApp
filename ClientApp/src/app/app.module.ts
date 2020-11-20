@@ -8,6 +8,11 @@ import { FormComponent } from "./core/form.component";
 import { MessageModule } from "./messages/message.module";
 import { MessageComponent } from "./messages/message.component";
 
+import { registerLocaleData } from '@angular/common';
+import localePl from '@angular/common/locales/pl';
+registerLocaleData(localePl);
+
+
 @NgModule({
   declarations: [
     

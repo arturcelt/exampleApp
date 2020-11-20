@@ -7,7 +7,7 @@ import { MODES, SharedState } from "./sharedState.model";
   {
     selector: "paTable",
     moduleId: module.id,
-    templateUrl: "template.component.html"
+    templateUrl: "table.component.html"
   })
 export class TableComponent {
   constructor(private model: Model, private state: SharedState) { }

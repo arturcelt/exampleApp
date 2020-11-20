@@ -30,6 +30,7 @@
     <None Remove="ClientApp\src\app\core\table.component.ts" />
     <None Remove="ClientApp\src\app\messages\message.component.ts" />
     <None Remove="ClientApp\src\app\messages\message.model.ts" />
+    <None Remove="ClientApp\src\app\messages\message.module.ts" />
     <None Remove="ClientApp\src\app\messages\message.service.ts" />
     <None Remove="ClientApp\src\app\model\model.module.ts" />
     <None Remove="ClientApp\src\app\model\product.model.ts" />
@@ -44,6 +45,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\core\table.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\messages\message.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\messages\message.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\messages\message.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\messages\message.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\model\model.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\model\product.model.ts" />

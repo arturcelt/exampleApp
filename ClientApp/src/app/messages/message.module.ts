@@ -6,7 +6,7 @@ import { MessageService } from "./message.service";
 @NgModule({
   imports: [BrowserModule],
   declarations: [MessageComponent],
-  export: [MessageComponent],
+  exports: [MessageComponent],
   providers: [MessageService]
 })
 export class MessageModule { }
