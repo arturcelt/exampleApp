@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { MessageService } from "./message.service";
 import { Message } from "./message.model";
-import { Objservable } from "rxjs/Observable";
+import { Observable } from "rxjs/Observable";
 
 @Component({
   selector: "paMessages",
