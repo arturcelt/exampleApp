@@ -7,6 +7,7 @@ import { Observable } from "rxjs/Observable";
 import "rxjs/add/operator/filter";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/distinctUntilChanged";
+import "rxjs/add/operator/skipWhile";
 
 @Component({
   selector: "paForm",
@@ -19,6 +20,7 @@ export class FormComponent {
   
   constructor(private model: Model, @Inject(SHARED_STATE) private stateEvents: Observable<SharedState>) {
     stateEvents
+      .skipWhile(state => state.mode == MODES.EDIT)
       .distinctUntilChanged((firstState, secondState) => firstState.mode == secondState.mode && firstState.id == secondState.id)
       .subscribe((update) => {
         this.product = new Product();
