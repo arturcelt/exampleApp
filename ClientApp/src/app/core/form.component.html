@@ -1,5 +1,6 @@
 <div class="bg-primary p-a-1" [class.bg-warning]="editing">
   <h5>{{editing ? "Edycja": "Dodawanie"}} produktów</h5>
+  Ostatnie zdarzenie: {{stateEvents | async | json }}
 </div>
 <form novalidate #form="ngForm" (ngSubmit)="submitForm(form)" (reset)="resetForm()">
   <div class="form-group">
