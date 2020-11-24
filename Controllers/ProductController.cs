@@ -23,7 +23,7 @@ namespace exampleApp.Controllers
         [HttpGet("{id}", Name = "Get")]
         public Product Get(int id)
         {
-            return api_rest.Get(id);
+            return rest.Get(id);
         }
 
         // POST: api/Product
