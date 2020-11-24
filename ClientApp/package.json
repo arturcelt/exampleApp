@@ -9,8 +9,7 @@
     "build:ssr": "npm run build -- --app=ssr --output-hashing=media",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "json": "json-server --p 3500 restData.js"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -49,8 +48,7 @@
     "protractor": "~5.1.2",
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
-    "typescript": "~2.5.3",
-    "json-server": "0.8.21"
+    "typescript": "~2.5.3"
   },
   "optionalDependencies": {
     "node-sass": "^4.9.0"
