@@ -28,20 +28,23 @@ namespace exampleApp.Controllers
 
         // POST: api/Product
         [HttpPost]
-        public void Post([FromBody] string value)
+        public Product Post([FromBody] Product product)
         {
+            return rest.Save(product);
         }
 
         // PUT: api/Product/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public Product Put(int id, [FromBody] Product product)
         {
+            return rest.Save(product);
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public Product Delete(int id)
         {
+            return rest.Delete(id);
         }
     }
 }

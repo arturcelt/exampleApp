@@ -35,5 +35,45 @@ namespace exampleApp.Models
             }
         }
 
+        public static Product Save(Product product)
+        {
+            if(product.id == null)
+            {
+                product.id = GenerateProductId();
+                Sampleproducts.Add(product);
+                return product;
+            } else
+            {
+                Product productEdit = Sampleproducts.Where(T => T.id == product.id).SingleOrDefault();
+                productEdit.name = product.name;
+                productEdit.category = product.category;
+                productEdit.price = product.price;
+                return productEdit;
+            }
+        }
+
+        public static Product Delete(int id)
+        {
+            Product product = Sampleproducts.Where(T => T.id == id).SingleOrDefault();
+            if(product != null)
+            {
+                Sampleproducts.Remove(product);
+            }
+            return product;
+        }
+
+        private static int GenerateProductId()
+        {
+            int? maxId = Sampleproducts.Max(T => T.id);
+            if(maxId == null)
+            {
+                return 1;
+            }
+            else
+            {
+                return (int)++maxId;
+            }
+        }
+
     }
 }
