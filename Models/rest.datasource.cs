@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace exampleApp.Models
 {
-    public static class api_rest
+    public static class rest
     {
         private static List<Product> Products = new List<Product>
         {
