@@ -7,7 +7,7 @@ namespace exampleApp.Models
 {
     public static class rest
     {
-        private static List<Product> Products = new List<Product>
+        private static List<Product> Sampleproducts = new List<Product>
         {
             new Product { id = 1, name = "Kajak", category = "Sporty wodne", price = 275M },
             new Product { id = 2, name = "Kamizelka ratunkowa", category = "Sporty wodne", price = 48.95M },
@@ -22,9 +22,17 @@ namespace exampleApp.Models
 
         public static Product Get(int id)
         {
-            Product product = Products.Where(T => T.id == id).SingleOrDefault();
+            Product product = Sampleproducts.Where(T => T.id == id).SingleOrDefault();
 
             return product;
+        }
+
+        public static IEnumerable<Product> Products
+        {
+            get
+            {
+                return Sampleproducts;
+            }
         }
 
     }

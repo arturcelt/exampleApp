@@ -13,4 +13,12 @@ export class RestDataSource {
   getData(): Observable<Product[]> {
     return this.http.get(this.url).map(response => response.json());
   }
+
+  saveProduct(product: Product): Observable<Product> {
+    return this.http.post(this.url, product).map(response => response.json());
+  }
+
+  updateProduct(product: Product): Observable<Product> {
+    return this.http.put(`${this.url}/${product.id}`, product).map(response => response.json());
+  }
 }

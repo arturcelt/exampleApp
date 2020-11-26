@@ -14,9 +14,9 @@ namespace exampleApp.Controllers
     {
         // GET: api/Product
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Product> Get()
         {
-            return new string[] { "value1", "value2" };
+            return rest.Products;
         }
 
         // GET: api/Product/5
