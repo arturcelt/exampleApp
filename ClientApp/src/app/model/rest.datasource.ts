@@ -1,5 +1,5 @@
 import { Injectable, Inject, InjectionToken } from "@angular/core";
-import { Http, Request, RequestMethod } from "@angular/http";
+import { Http, Request, RequestMethod, Jsonp } from "@angular/http";
 import { Observable } from "rxjs/Observable";
 import { Product } from "./product.model";
 import "rxjs/operator/map";
@@ -8,11 +8,11 @@ export const REST_URL = new InjectionToken("rest_url");
 
 @Injectable()
 export class RestDataSource {
-  constructor(private http: Http, @Inject(REST_URL) private url: string) { }
+  constructor(private http: Http, private jsonp: Jsonp, @Inject(REST_URL) private url: string) { }
 
   //-- SPRAWDŹ W TYPE SCRIPT UNIE TYPÓW CZYLI ZWRACANIE RÓZNYCH TYPÓW
   getData(): Observable<Product[]> {
-    return <Observable<Product[]>> this.sendRequest(RequestMethod.Get, this.url);
+    return this.jsonp.get(this.url + "?callback=JSONP_CALLBACK").map(response => response.json());
   }
 
   saveProduct(product: Product): Observable<Product> {
