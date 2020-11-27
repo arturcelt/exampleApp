@@ -42,9 +42,14 @@ namespace exampleApp.Controllers
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public Product Delete(int id)
+        public IActionResult Delete(int id)
         {
-            return rest.Delete(id);
+            Product product = rest.Delete(id);
+            if(product == null)
+            {
+                return NotFound(product);
+            }
+            return Ok(product);
         }
     }
 }
