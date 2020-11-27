@@ -28,15 +28,17 @@ export class RestDataSource {
   }
 
   private sendRequest(verb: RequestMethod, url: string, body?: Product): Observable<Product> | Observable<Product[]> {
+
+    let headers = new Headers();
+    headers.set("Access-Key", "<sekret>");
+    headers.set("Application-Names", ["exampleApp", "proAngular"]);
+
+
     return <Observable<Product>> this.http.request(new Request({
       method: verb,
       url: url,
       body: body,
-      headers: new Headers(
-        {
-          "Access-Key": "<sekret>",
-          "Application-Name": "<exampleApp>"
-        })
+      headers: headers
     })).map(response => response.json());
   }
 
