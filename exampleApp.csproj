@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\app.routing.ts" />
     <None Remove="ClientApp\src\app\core\core.module.ts" />
     <None Remove="ClientApp\src\app\core\form.component.ts" />
     <None Remove="ClientApp\src\app\core\state.pipe.ts" />
@@ -44,6 +45,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\app.routing.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\core\core.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\core\form.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\core\state.pipe.ts" />
