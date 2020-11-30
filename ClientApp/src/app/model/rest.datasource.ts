@@ -5,6 +5,7 @@ import { Product } from "./product.model";
 import "rxjs/operator/map";
 import "rxjs/add/operator/catch";
 import "rxjs/add/observable/throw";
+import "rxjs/add/operator/map";
 
 export const REST_URL = new InjectionToken("rest_url");
 
