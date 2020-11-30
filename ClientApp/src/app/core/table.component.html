@@ -16,7 +16,7 @@
     
     <td class="text-xs-center">
       <button class="btn btn-danger btn-sm" (click)="deleteProduct(item.id)">Usuń</button>
-      <button class="btn-warning btn-sm" (click)="editProduct(item.id)" [routerLink]="['/form', 'edit', item.id]">Edytuj</button>
+      <button class="btn-warning btn-sm" (click)="editProduct(item.id)" [routerLink]="['/form', 'edit', item.id, { name: item.name, category: item.category, price: item.price }]">Edytuj</button>
     </td>
   </tr>
 </table>
