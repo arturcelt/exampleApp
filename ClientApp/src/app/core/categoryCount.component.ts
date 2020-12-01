@@ -15,9 +15,6 @@ export class CategoryCountComponent {
     this.differ = this.keyValueDiffers
       .find(this.model.getProducts())
       .create();
-
-
-
   }
 
   ngDoCheck() {
