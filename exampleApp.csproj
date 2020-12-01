@@ -27,8 +27,10 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\app.routing.ts" />
+    <None Remove="ClientApp\src\app\core\categoryCount.component.ts" />
     <None Remove="ClientApp\src\app\core\core.module.ts" />
     <None Remove="ClientApp\src\app\core\form.component.ts" />
+    <None Remove="ClientApp\src\app\core\productCount.component.ts" />
     <None Remove="ClientApp\src\app\core\state.pipe.ts" />
     <None Remove="ClientApp\src\app\core\table.component.ts" />
     <None Remove="ClientApp\src\app\messages\errorHandler.ts" />
@@ -46,8 +48,10 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\app.routing.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\core\categoryCount.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\core\core.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\core\form.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\core\productCount.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\core\state.pipe.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\core\table.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\messages\errorHandler.ts" />
