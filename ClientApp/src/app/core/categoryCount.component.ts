@@ -3,7 +3,7 @@ import { Model } from "../model/repository.model";
 
 @Component({
   selector: "paCategoryCount",
-  template: `<div class="bg-primary p-a-1>{{count}}.</div>`
+  template: `<div class="bg-primary p-a-1">{{count}}.</div>`
 })
 export class CategoryCountComponent {
   private differ: KeyValueDiffer<any, any>;
