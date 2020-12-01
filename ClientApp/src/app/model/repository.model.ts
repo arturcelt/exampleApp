@@ -21,6 +21,24 @@ export class Model {
     return this.products.find(p => this.locator(p, id));
   }
 
+  getNextProductId(id: number): number {
+    let index = this.products.findIndex(p => this.locator(p, id));
+    if (index > -1) {
+      return this.products[this.products.length > index + 2 ? index + 1 : 0].id;
+    } else {
+      return id || 0;
+    }
+  }
+
+  getPreviousProduct(id: number): number {
+    let index = this.products.findIndx(p => this.locator(p, id));
+    if (index > -1) {
+      return this.products[index > 0 ? index - 1 : this.products.length - 1].id;
+    } else {
+      return id || 0;
+    }
+  }
+
   saveProduct(product: Product)
   {
     if (product.id == 0 || product.id == null) {
