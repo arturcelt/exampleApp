@@ -1,6 +1,16 @@
 <div class="bg-primary p-a-1" [class.bg-warning]="editing">
   <h5>{{editing ? "Edycja": "Dodawanie"}} produktów</h5>
 </div>
+
+<div *ngIf="editing" class="p-t-1">
+  <button class="btn btn-secondary" [routerLink]="['/form', 'edit', model.getPreviousProductId(product.id)]">
+    Poprzedni
+  </button>
+  <button class="btn btn-secondary" [routerLink]="['/form', 'edit', model.getNextProductId(product.id)]">
+    Następny
+  </button>
+</div>
+
 <form novalidate #form="ngForm" (ngSubmit)="submitForm(form)" (reset)="resetForm()">
   <div class="form-group">
     <label>Produkt</label>
@@ -19,5 +29,6 @@
 
   <button type="submit" class="btn btn-primary" [class.btn-warning]="editing" [disabled]="form.invalid">{{editing ? "Zapisz" : "Dodaj"}}</button>
   <button type="reset" class="btn btn-secondary" routerLink="/">Anuluj</button>
+ 
 
 </form>

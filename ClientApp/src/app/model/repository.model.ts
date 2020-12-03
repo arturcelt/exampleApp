@@ -30,8 +30,8 @@ export class Model {
     }
   }
 
-  getPreviousProduct(id: number): number {
-    let index = this.products.findIndx(p => this.locator(p, id));
+  getPreviousProductId(id: number): number {
+    let index = this.products.findIndex(p => this.locator(p, id));
     if (index > -1) {
       return this.products[index > 0 ? index - 1 : this.products.length - 1].id;
     } else {
