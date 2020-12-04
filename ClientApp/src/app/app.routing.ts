@@ -15,7 +15,6 @@ const childRoutes: Routes = [
 const routes: Routes = [
   { path: "form/:mode/:id", component: FormComponent },
   { path: "form/:mode", component: FormComponent },
-  { path: "nie", redirectTo: "/form/create", pathMatch: "prefix" },
   { path: "table", component: TableComponent, children: childRoutes },
   { path: "table/:category", component: TableComponent, children: childRoutes},
   { path: "", redirectTo: "/table", pathMatch: "full" },
