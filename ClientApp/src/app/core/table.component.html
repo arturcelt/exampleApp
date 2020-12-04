@@ -5,6 +5,14 @@
 </div>
 
 <div class="col-xs-9">
+  <div class="m-b-1">
+    <button class="btn btn-info" routerLink="/table/products">Liczba produktów</button>
+    <button class="btn btn-primary" routerLink="/table/categories">Liczba kategorii</button>
+    <button class="btn btn-secondary" routerLink="/table">Liczba nie wiadomo czego</button>
+    <div class="m-t-1">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
   <table class="table table-sm table-bordered table-striped">
     <tr>
       <th>ID</th>
