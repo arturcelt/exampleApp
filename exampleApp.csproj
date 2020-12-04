@@ -40,6 +40,7 @@
     <None Remove="ClientApp\src\app\messages\message.module.ts" />
     <None Remove="ClientApp\src\app\messages\message.service.ts" />
     <None Remove="ClientApp\src\app\model\model.module.ts" />
+    <None Remove="ClientApp\src\app\model\model.resolver.ts" />
     <None Remove="ClientApp\src\app\model\product.model.ts" />
     <None Remove="ClientApp\src\app\model\repository.model.ts" />
     <None Remove="ClientApp\src\app\model\rest.datasource.ts" />
@@ -62,6 +63,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\messages\message.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\messages\message.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\model\model.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\model\model.resolver.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\model\product.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\model\repository.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\core\sharedState.model.ts" />
