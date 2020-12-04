@@ -4,11 +4,18 @@ import { FormComponent } from "./core/form.component";
 import { NotFoundComponent } from "./core/notFoundComponent";
 import { ProductCountComponent } from "./core/productCount.component";
 import { CategoryCountComponent } from "./core/categoryCount.component";
+import { ModelResolver } from "./model/model.resolver";
 
 const childRoutes: Routes = [
-  { path: "products", component: ProductCountComponent },
-  { path: "categories", component: CategoryCountComponent },
-  { path: "", component: ProductCountComponent }
+  {
+    path: "",
+    children: [
+      { path: "products", component: ProductCountComponent },
+      { path: "categories", component: CategoryCountComponent },
+      { path: "", component: ProductCountComponent }
+    ],
+    resolve: { model: ModelResolver }
+  }
 ]
 
 
