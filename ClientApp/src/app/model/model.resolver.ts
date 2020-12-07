@@ -16,6 +16,5 @@ export class ModelResolver {
       this.messages.reportMessage(new Message("Wczytywanie danych..."));
       return this.dataSource.getData();
     }
-    
   }
 }

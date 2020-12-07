@@ -19,8 +19,8 @@ var childRoutes = [
     }
 ];
 var routes = [
-    { path: "form/:mode/:id", component: form_component_1.FormComponent },
-    { path: "form/:mode", component: form_component_1.FormComponent },
+    { path: "form/:mode/:id", component: form_component_1.FormComponent, resolve: { model: model_resolver_1.ModelResolver } },
+    { path: "form/:mode", component: form_component_1.FormComponent, resolve: { model: model_resolver_1.ModelResolver } },
     { path: "table", component: table_component_1.TableComponent, children: childRoutes },
     { path: "table/:category", component: table_component_1.TableComponent, children: childRoutes },
     { path: "", redirectTo: "/table", pathMatch: "full" },
