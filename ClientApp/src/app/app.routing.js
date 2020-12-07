@@ -7,6 +7,7 @@ var notFoundComponent_1 = require("./core/notFoundComponent");
 var productCount_component_1 = require("./core/productCount.component");
 var categoryCount_component_1 = require("./core/categoryCount.component");
 var model_resolver_1 = require("./model/model.resolver");
+var terms_guard_1 = require("./terms.guard");
 var childRoutes = [
     {
         path: "",
@@ -20,7 +21,7 @@ var childRoutes = [
 ];
 var routes = [
     { path: "form/:mode/:id", component: form_component_1.FormComponent, resolve: { model: model_resolver_1.ModelResolver } },
-    { path: "form/:mode", component: form_component_1.FormComponent, resolve: { model: model_resolver_1.ModelResolver } },
+    { path: "form/:mode", component: form_component_1.FormComponent, resolve: { model: model_resolver_1.ModelResolver }, canActivate: [terms_guard_1.TermsGuard] },
     { path: "table", component: table_component_1.TableComponent, children: childRoutes },
     { path: "table/:category", component: table_component_1.TableComponent, children: childRoutes },
     { path: "", redirectTo: "/table", pathMatch: "full" },

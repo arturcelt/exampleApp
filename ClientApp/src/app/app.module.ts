@@ -21,7 +21,7 @@ registerLocaleData(localePl);
     AppComponent
   ],
   imports: [BrowserModule, ModelModule, CoreModule, MessageModule, routing],
-  providers: [{provide: LOCALE_ID, useValue: "pl-PL"}, TermsGuard],
+  providers: [ TermsGuard, {provide: LOCALE_ID, useValue: "pl-PL"}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,7 +2,6 @@ import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, RouterStateSnapshot, Router } from "@angular/router";
 import { MessageService } from "./messages/message.service";
 import { Message } from "./messages/message.model";
-import { promise } from "protractor";
 
 @Injectable()
 export class TermsGuard {
