@@ -1,3 +1,3 @@
 export class Message {
-  constructor(private text: string, private error: boolean = false, private responses?: [[string,  (string) => void]]) { }
+  constructor(private text: string, private error: boolean = false, private responses?: [[string, (string) => void], [string, (string) => void]]) { }
 }
