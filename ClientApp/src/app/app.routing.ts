@@ -10,6 +10,7 @@ import { TermsGuard } from "./terms.guard";
 const childRoutes: Routes = [
   {
     path: "",
+    canActivateChild: [TermsGuard],
     children: [
       { path: "products", component: ProductCountComponent },
       { path: "categories", component: CategoryCountComponent },
@@ -22,7 +23,7 @@ const childRoutes: Routes = [
 
 const routes: Routes = [
   { path: "form/:mode/:id", component: FormComponent, resolve: { model: ModelResolver } },
-  { path: "form/:mode", component: FormComponent, resolve: {model: ModelResolver}, canActivate: [TermsGuard] },
+  { path: "form/:mode", component: FormComponent, resolve: {model: ModelResolver},  },
   { path: "table", component: TableComponent, children: childRoutes },
   { path: "table/:category", component: TableComponent, children: childRoutes},
   { path: "", redirectTo: "/table", pathMatch: "full" },

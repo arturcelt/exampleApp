@@ -13,7 +13,7 @@ export class TermsGuard {
         let responses: [[string, (string) => void], [string, (string) => void]] = [
           ["Tak", () => { resolve(true) }],
           ["Nie", () => {
-            this.router.navigateByUrl(this.router.url);
+            //this.router.navigateByUrl(this.router.url);
             resolve(false);
           }]
         ];
