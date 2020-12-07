@@ -11,6 +11,7 @@ var terms_guard_1 = require("./terms.guard");
 var childRoutes = [
     {
         path: "",
+        canActivateChild: [terms_guard_1.TermsGuard],
         children: [
             { path: "products", component: productCount_component_1.ProductCountComponent },
             { path: "categories", component: categoryCount_component_1.CategoryCountComponent },
@@ -21,7 +22,7 @@ var childRoutes = [
 ];
 var routes = [
     { path: "form/:mode/:id", component: form_component_1.FormComponent, resolve: { model: model_resolver_1.ModelResolver } },
-    { path: "form/:mode", component: form_component_1.FormComponent, resolve: { model: model_resolver_1.ModelResolver }, canActivate: [terms_guard_1.TermsGuard] },
+    { path: "form/:mode", component: form_component_1.FormComponent, resolve: { model: model_resolver_1.ModelResolver }, },
     { path: "table", component: table_component_1.TableComponent, children: childRoutes },
     { path: "table/:category", component: table_component_1.TableComponent, children: childRoutes },
     { path: "", redirectTo: "/table", pathMatch: "full" },
