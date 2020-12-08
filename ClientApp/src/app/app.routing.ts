@@ -23,6 +23,10 @@ const childRoutes: Routes = [
 
 
 const routes: Routes = [
+  {
+    path: "ondemand",
+    loadChildren: "app/ondemand/ondemand.module#OndemandModule"
+  },
   { path: "form/:mode/:id", component: FormComponent, resolve: { model: ModelResolver }, canDeactivate: [UnsavedGuard] },
   { path: "form/:mode", component: FormComponent, resolve: {model: ModelResolver},  },
   { path: "table", component: TableComponent, children: childRoutes },
