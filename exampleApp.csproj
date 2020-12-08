@@ -34,6 +34,7 @@
     <None Remove="ClientApp\src\app\core\productCount.component.ts" />
     <None Remove="ClientApp\src\app\core\state.pipe.ts" />
     <None Remove="ClientApp\src\app\core\table.component.ts" />
+    <None Remove="ClientApp\src\app\core\unsaved.guard.ts" />
     <None Remove="ClientApp\src\app\messages\errorHandler.ts" />
     <None Remove="ClientApp\src\app\messages\message.component.ts" />
     <None Remove="ClientApp\src\app\messages\message.model.ts" />
@@ -57,6 +58,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\core\productCount.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\core\state.pipe.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\core\table.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\core\unsaved.guard.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\messages\errorHandler.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\messages\message.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\messages\message.model.ts" />
