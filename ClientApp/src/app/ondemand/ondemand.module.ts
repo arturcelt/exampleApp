@@ -17,7 +17,18 @@ let routing = RouterModule.forChild([
       { outlet: "left", path: "", component: SecondComponent },
       { outlet: "right", path: "", component: SecondComponent}
     ]
+  },
+  {
+    path: "swap",
+    component: OndemandComponent,
+    children: [
+      { outlet: "primary", path: "", component: FirstComponent },
+      { outlet: "left", path: "", component: SecondComponent },
+      { outlet: "right", path: "", component: SecondComponent }
+    ]
   }
+  
+  
 ]);
 
 

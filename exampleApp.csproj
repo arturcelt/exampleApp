@@ -48,8 +48,10 @@
     <None Remove="ClientApp\src\app\model\rest.datasource.ts" />
     <None Remove="ClientApp\src\app\model\sharedState.model.ts" />
     <None Remove="ClientApp\src\app\model\static.datasource.ts" />
+    <None Remove="ClientApp\src\app\ondemand\first.component.ts" />
     <None Remove="ClientApp\src\app\ondemand\ondemand.component.ts" />
     <None Remove="ClientApp\src\app\ondemand\ondemand.module.ts" />
+    <None Remove="ClientApp\src\app\ondemand\second.component.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -75,8 +77,10 @@
     <TypeScriptCompile Include="ClientApp\src\app\core\sharedState.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\model\rest.datasource.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\model\static.datasource.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\ondemand\first.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\ondemand\ondemand.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\ondemand\ondemand.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\ondemand\second.component.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
