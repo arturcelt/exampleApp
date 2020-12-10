@@ -23,6 +23,7 @@ export class LoadGuard {
             }
           ]
         ];
+      this.messages.reportMessage(new Message("Czy chcesz wczytać moduł?", false, responses));
     });
   }
 
