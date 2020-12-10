@@ -10,6 +10,7 @@ import { MessageComponent } from "./messages/message.component";
 import { routing } from "./app.routing";
 import { AppComponent } from "./app.component";
 import { TermsGuard } from "./terms.guard";
+import { LoadGuard } from "./load.guard";
 
 import { registerLocaleData } from '@angular/common';
 import localePl from '@angular/common/locales/pl';
@@ -21,7 +22,7 @@ registerLocaleData(localePl);
     AppComponent
   ],
   imports: [BrowserModule, ModelModule, CoreModule, MessageModule, routing],
-  providers: [ TermsGuard, {provide: LOCALE_ID, useValue: "pl-PL"}],
+  providers: [ TermsGuard, LoadGuard, {provide: LOCALE_ID, useValue: "pl-PL"}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
