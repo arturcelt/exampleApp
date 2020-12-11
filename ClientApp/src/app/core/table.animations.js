@@ -10,10 +10,7 @@ exports.HighlightTrigger = core_1.trigger("rowHighlight", [
         backgroundColor: "lightsalmon",
         fontSize: "12px"
     })),
-    core_1.state("*", core_1.style({
-        border: "solid black 2px"
-    })),
-    core_1.transition("selected => notselected", core_1.animate("200ms")),
-    core_1.transition("notselected => selected", core_1.animate("400ms"))
+    core_1.transition("* => notselected", core_1.animate("200ms")),
+    core_1.transition("* => selected", core_1.animate("400ms"))
 ]);
 //# sourceMappingURL=table.animations.js.map
