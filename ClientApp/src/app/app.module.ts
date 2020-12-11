@@ -11,6 +11,7 @@ import { routing } from "./app.routing";
 import { AppComponent } from "./app.component";
 import { TermsGuard } from "./terms.guard";
 import { LoadGuard } from "./load.guard";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { registerLocaleData } from '@angular/common';
 import localePl from '@angular/common/locales/pl';
@@ -21,7 +22,7 @@ registerLocaleData(localePl);
   declarations: [
     AppComponent
   ],
-  imports: [BrowserModule, ModelModule, CoreModule, MessageModule, routing],
+  imports: [BrowserModule, ModelModule, CoreModule, MessageModule, routing, BrowserAnimationsModule],
   providers: [ TermsGuard, LoadGuard, {provide: LOCALE_ID, useValue: "pl-PL"}],
   bootstrap: [AppComponent]
 })
