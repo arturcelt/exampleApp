@@ -1,7 +1,7 @@
 import { trigger, style, state, transition, animate } from "@angular/core";
 
 
-export const HighlightTrigger = trigger("rowWhighlight", [
+export const HighlightTrigger = trigger("rowHighlight", [
   state("selected", style({
     backgroundColor: "lightgreen",
     fontSize: "20px"
@@ -9,6 +9,9 @@ export const HighlightTrigger = trigger("rowWhighlight", [
   state("notselected", style({
     backgroundColor: "lightsalmon",
     fontSize: "12px"
+  })),
+  state("*", style({
+    border: "solid black 2px"
   })),
   transition("selected => notselected", animate("200ms")),
   transition("notselected => selected", animate("400ms"))
