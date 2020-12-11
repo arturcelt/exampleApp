@@ -1,17 +1,3 @@
-
-<div class="col-xs-3">
-  <button class="btn btn-secondary btn-block" routerLink="/table" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Wszystkie</button>
-  <button *ngFor="let category of categories" class="btn btn-secondary btn-block" [routerLink]="['/table', category]" routerLinkActive="active">{{category}}</button>
-</div>
-
-<div class="col-xs-9">
-  <div class="m-b-1">
-    <button class="btn btn-info" routerLink="products">Liczba produktów</button>
-    <button class="btn btn-primary" routerLink="categories">Liczba kategorii</button>
-    <div class="m-t-1">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
   <table class="table table-sm table-bordered table-striped">
     <tr>
       <th>ID</th>
@@ -26,21 +12,15 @@
       <td style="vertical-align: middle">
         {{item.price | currency: "zł": true }}
       </td>
-
-
       <td class="text-xs-center">
         <button class="btn btn-danger btn-sm" (click)="deleteProduct(item.id)">Usuń</button>
         <button class="btn-warning btn-sm" [routerLink]="['/form', 'edit', item.id]">Edytuj</button>
       </td>
     </tr>
   </table>
-</div>
 
 <div class="col-xs-12">
   <button class="btn btn-primary" routerLink="/form/create">Dodaj nowy produkt</button>
-  <button class="btn btn-danger" (click)="deleteProduct(-1)">Wygeneruj bład HTTP</button>
-  <button class="btn btn-danger" routerLink="/nie/istnieje">Wygeneruj błąd routingu</button>
-  <button class="btn btn-danger" routerLink="/ondemand/swap">Wczytaj moduł</button>
 </div>
 
 
