@@ -33,6 +33,7 @@
     <None Remove="ClientApp\src\app\core\notFoundComponent.ts" />
     <None Remove="ClientApp\src\app\core\productCount.component.ts" />
     <None Remove="ClientApp\src\app\core\state.pipe.ts" />
+    <None Remove="ClientApp\src\app\core\table.animations.ts" />
     <None Remove="ClientApp\src\app\core\table.component.ts" />
     <None Remove="ClientApp\src\app\core\unsaved.guard.ts" />
     <None Remove="ClientApp\src\app\load.guard.ts" />
@@ -62,6 +63,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\core\notFoundComponent.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\core\productCount.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\core\state.pipe.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\core\table.animations.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\core\table.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\core\unsaved.guard.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\load.guard.ts" />

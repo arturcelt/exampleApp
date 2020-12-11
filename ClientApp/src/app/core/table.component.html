@@ -1,3 +1,13 @@
+<div class="form-group bg-info p-a-1">
+  <label>Kategoria</label>
+  <select [(ngModel)]="highlightCategory" class="form-control">
+    <option value="">Brak</option>
+    <option *ngFor="let category of categories">
+      {{category}}
+    </option>
+  </select>
+</div>
+
   <table class="table table-sm table-bordered table-striped">
     <tr>
       <th>ID</th>
@@ -5,7 +15,7 @@
       <th>Kategoria</th>
       <th>Cena</th>
     </tr>
-    <tr *ngFor="let item of getProducts()">
+    <tr *ngFor="let item of getProducts()" [@rowHighlight]="getRowState(item.category)">
       <td style="vertical-align: middle">{{item.id}}</td>
       <td style="vertical-align: middle">{{item.name}}</td>
       <td style="vertical-align: middle">{{item.category}}</td>
@@ -14,7 +24,7 @@
       </td>
       <td class="text-xs-center">
         <button class="btn btn-danger btn-sm" (click)="deleteProduct(item.id)">Usuń</button>
-        <button class="btn-warning btn-sm" [routerLink]="['/form', 'edit', item.id]">Edytuj</button>
+        <button class="btn btn-warning btn-sm" [routerLink]="['/form', 'edit', item.id]">Edytuj</button>
       </td>
     </tr>
   </table>
