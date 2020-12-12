@@ -12,11 +12,16 @@ exports.HighlightTrigger = core_1.trigger("rowHighlight", [
     })),
     core_1.state("void", core_1.style({ opacity: 0 })),
     core_1.transition("* => notselected", core_1.animate("200ms")),
-    //transition("* => void",  animate("1000ms")),
-    //transition("void => *", [style({ opacity: 0 }), animate("1500ms")]),
-    core_1.transition("* => selected", core_1.animate("400ms 200ms ease-in", core_1.style({
-        backgroundColor: "lightblue",
-        fontSize: "25px"
-    })))
+    core_1.transition("* => selected", [
+        core_1.animate("400ms 200ms ease-in", core_1.style({
+            backgroundColor: "lightblue",
+            fontSize: "25px"
+        })),
+        core_1.animate("250ms", core_1.style({
+            backgroundColor: "lightcoral",
+            fontSize: "30px"
+        })),
+        core_1.animate("200ms")
+    ])
 ]);
 //# sourceMappingURL=table.animations.js.map
