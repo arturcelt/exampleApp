@@ -45,7 +45,7 @@ export class TableComponent {
   }
 
   writeAnimationEvent(event: AnimationTransitionEvent, name: string, start: boolean) {
-    console.log("Animacja " + name + " " + (start ? 'rozpoczęta' : 'zakończona') + "w stanie " + event.fromState + " ze stanu " + event.toState + " czas trwania: " + event.totalTime + ".");
+    console.log("Animacja " + name + " " + (start ? 'rozpoczęta' : 'zakończona') + " w stanie " + event.fromState + " ze stanu " + event.toState + " czas trwania: " + event.totalTime + ".");
   }
 
   }
