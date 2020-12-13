@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\animationUtils.ts" />
     <None Remove="ClientApp\src\app\app.routing.ts" />
     <None Remove="ClientApp\src\app\core\categoryCount.component.ts" />
     <None Remove="ClientApp\src\app\core\core.module.ts" />
@@ -56,6 +57,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\animationUtils.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\app.routing.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\core\categoryCount.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\core\core.module.ts" />
