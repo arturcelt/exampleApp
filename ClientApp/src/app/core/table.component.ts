@@ -3,6 +3,7 @@ import { Product } from "../model/product.model";
 import { Model } from "../model/repository.model";
 import { ActivatedRoute } from "@angular/router";
 import { HighlightTrigger } from "./table.animations";
+import { AnimationTransitionEvent } from "@angular/core";
 
 @Component(
   {
@@ -41,6 +42,10 @@ export class TableComponent {
   highlightCategory: string = "";
   getRowState(category: string): string {
     return this.highlightCategory == "" ? "" : this.highlightCategory == category ? "selected" : "notselected";
+  }
+
+  writeAnimationEvent(event: AnimationTransitionEvent, name: string, start: boolean) {
+    console.log("Animacja " + name + " " + (start ? 'rozpoczęta' : 'zakończona') + "w stanie " + event.fromState + " ze stanu " + event.toState + " czas trwania: " + event.totalTime + ".");
   }
 
   }
