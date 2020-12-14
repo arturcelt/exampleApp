@@ -54,6 +54,7 @@
     <None Remove="ClientApp\src\app\ondemand\ondemand.component.ts" />
     <None Remove="ClientApp\src\app\ondemand\ondemand.module.ts" />
     <None Remove="ClientApp\src\app\ondemand\second.component.ts" />
+    <None Remove="ClientApp\src\tests\frameworkTest.spec.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -85,6 +86,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\ondemand\ondemand.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\ondemand\ondemand.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\ondemand\second.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\tests\frameworkTest.spec.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
