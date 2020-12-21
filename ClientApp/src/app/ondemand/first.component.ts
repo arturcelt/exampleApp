@@ -4,12 +4,8 @@ import { Model } from "../model/repository.model";
 
 @Component({
   selector: "first",
-  template: `<div class="bg-primary p-a-1">
-Mamy
-<span class="strong">{{getProducts().length}}</span>
-Produktów.
-</div>
-`
+  template: "first.component.html"
+
 })
 export class FirstComponent {
   constructor(private repository: Model) { }

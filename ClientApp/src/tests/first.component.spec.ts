@@ -40,14 +40,17 @@ describe("FirstComponent", () => {
 
   it("Filtrowanie kategorii", () => {
     component.category = "Szachy";
+    fixture.detectChanges();
     expect(component.getProducts().length).toBe(1);
     expect(bindingElement.textContent).toContain("1");
 
     component.category = "Piłka nożna";
+    fixture.detectChanges();
     expect(component.getProducts().length).toBe(2);
     expect(bindingElement.textContent).toContain("2");
 
     component.category = "Bieganie";
+    fixture.detectChanges();
     expect(component.getProducts().length).toBe(0);
     expect(bindingElement.textContent).toContain("0");
   })
