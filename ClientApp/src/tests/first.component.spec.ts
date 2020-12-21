@@ -1,4 +1,4 @@
-import { TestBed, ComponentFixture, async } from "@angular/core/testing";
+import { TestBed, ComponentFixture, async} from "@angular/core/testing";
 import { FirstComponent } from "../app/ondemand/first.component";
 import { Product } from "../app/model/product.model";
 import { Model } from "../app/model/repository.model";
@@ -23,7 +23,7 @@ describe("FirstComponent", () => {
 
 
 
-  beforeEach(async() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [FirstComponent],
       providers: [{ provide: Model, useValue: mockRepository }]
@@ -37,7 +37,7 @@ describe("FirstComponent", () => {
     });
     
 
-  });
+  }));
   it("Sprawdzenie czy komponent jest zdefiniowany", () => {
     expect(component).toBeDefined()
   })

@@ -4,7 +4,8 @@ import { Model } from "../model/repository.model";
 
 @Component({
   selector: "first",
-  template: "first.component.html"
+  moduleId: module.id,
+  templateUrl: "first.component.html"
 
 })
 export class FirstComponent {
