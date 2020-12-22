@@ -40,17 +40,14 @@ describe("FirstComponent", () => {
 
   }));
 
-  it("Obsluga zdarzeń myszy", () => {
-    expect(component.highlighted).toBeFalsy();
-    expect(divElement.classList.contains("bg-success")).toBeFalsy();
+  it("Implementacja danych wyjściowych", () => {
+    let highlighted: boolean;
+    component.change.subscribe(value => highlighted = value);
     debugElement.triggerEventHandler("mouseenter", new Event("mouseenter"));
-    fixture.detectChanges();
-    expect(component.highlighted).toBeTruthy();
-    expect(divElement.classList.contains("bg-success")).toBeTruthy();
+    expect(highlighted).toBeTruthy();
     debugElement.triggerEventHandler("mouseleave", new Event("mouseleave"));
-    fixture.detectChanges();
-    expect(component.highlighted).toBeFalsy();
-    expect(divElement.classList.contains("bg-success")).toBeFalsy();
+    expect(highlighted).toBeFalsy();
+
   });
   
 });
