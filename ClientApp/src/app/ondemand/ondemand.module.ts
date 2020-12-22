@@ -27,8 +27,6 @@ let routing = RouterModule.forChild([
       { outlet: "right", path: "", component: FirstComponent }
     ]
   }
-  
-  
 ]);
 
 
