@@ -4,9 +4,22 @@ import { Product } from "../app/model/product.model";
 import { Model } from "../app/model/repository.model";
 import { DebugElement } from "@angular/core";
 import { By } from "@angular/platform-browser";
+import { Component, ViewChild } from "@angular/core";
+
+
+@Component({
+  template: `<first [pa-model]="model"></first>`
+})
+class TestComponent {
+  constructor(public model: Model) { }
+
+  @ViewChild(FirstComponent)
+  FirstComponent: FirstComponent;
+
+}
 
 describe("FirstComponent", () => {
-  let fixture: ComponentFixture<FirstComponent>;
+  let fixture: ComponentFixture<TestComponent>;
   let component: FirstComponent;
   let debugElement: DebugElement;
   let bindingElement: HTMLSpanElement;
@@ -26,28 +39,28 @@ describe("FirstComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [FirstComponent],
+      declarations: [FirstComponent, TestComponent],
       providers: [{ provide: Model, useValue: mockRepository }]
     });
 
     TestBed.compileComponents().then(() => {
-      fixture = TestBed.createComponent(FirstComponent);
-      component = fixture.componentInstance;
-      debugElement = fixture.debugElement;
-      divElement = debugElement.children[0].nativeElement;
+      fixture = TestBed.createComponent(TestComponent);
+      component = fixture.componentInstance.FirstComponent;
+      debugElement = fixture.debugElement.query(By.directive(FirstComponent));
     });
     
 
   }));
 
-  it("Implementacja danych wyjściowych", () => {
-    let highlighted: boolean;
-    component.change.subscribe(value => highlighted = value);
-    debugElement.triggerEventHandler("mouseenter", new Event("mouseenter"));
-    expect(highlighted).toBeTruthy();
-    debugElement.triggerEventHandler("mouseleave", new Event("mouseleave"));
-    expect(highlighted).toBeFalsy();
-
+  it("Otrzymanie modelu za pomocą właściwości danych wejściowych", () => {
+    component.category = "Szachy";
+    fixture.detectChanges();
+    let products = mockRepository.getProducts().filter(p => p.category == component.category);
+    let componentProducts = component.getProducts();
+    for (let i = 0; i < componentProducts.length; i++) {
+      expect(componentProducts[i]).toEqual(products[i]);
+    }
+    expect(debugElement.query(By.css("span")).nativeElement.textConent).toContain(products.length);
   });
   
 });
