@@ -60,7 +60,7 @@ describe("FirstComponent", () => {
     for (let i = 0; i < componentProducts.length; i++) {
       expect(componentProducts[i]).toEqual(products[i]);
     }
-    expect(debugElement.query(By.css("span")).nativeElement.textConent).toContain(products.length);
+    expect(debugElement.query(By.css("span")).nativeElement.textContent).toContain(products.length);
   });
   
 });

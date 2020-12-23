@@ -1,6 +1,8 @@
 import { Component, HostListener, EventEmitter, Input } from "@angular/core";
 import { Product } from "../model/product.model";
 import { Model } from "../model/repository.model";
+import { RestDataSource } from "../model/rest.datasource";
+import { Observable } from "rxjs/Observable";
 
 @Component({
   selector: "first",
@@ -9,15 +11,30 @@ import { Model } from "../model/repository.model";
 
 })
 export class FirstComponent {
-  category: string = "Piłka nożna";
+  _category: string = "Piłka nożna";
+  _products: Product[] = [];
   highlighted: boolean = false;
 
-    getProducts(): Product[] {
-    return this.model == null ? []: this.model.getProducts().filter(p => p.category == this.category);
+  constructor(public datasource: RestDataSource) { }
+
+  ngOnInit() {
+    this.updateData();
   }
 
-  @Input("pa-model")
-  model: Model;
+    getProducts(): Product[] {
+      return this._products;
+  }
+
+  set category(newValue: string) {
+    this._category = newValue;
+    this.updateData();
+  }
+
+  updateData() {
+    this.datasource.getData().subscribe(data => this._products = data.filter(p => p.category == this._category));
+  }
+
+
  }
 
 
