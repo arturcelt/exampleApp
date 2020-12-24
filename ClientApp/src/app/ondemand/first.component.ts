@@ -14,8 +14,11 @@ export class FirstComponent {
   _category: string = "Piłka nożna";
   _products: Product[] = [];
   highlighted: boolean = false;
+  instance: FirstComponent;
 
-  constructor(public datasource: RestDataSource) { }
+
+
+  constructor(public datasource: RestDataSource) { this.instance = this; }
 
   ngOnInit() {
     this.updateData();
@@ -32,6 +35,7 @@ export class FirstComponent {
 
   updateData() {
     this.datasource.getData().subscribe(data => this._products = data.filter(p => p.category == this._category));
+    
   }
 
 

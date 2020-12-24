@@ -5,62 +5,58 @@ import { Model } from "../app/model/repository.model";
 import { DebugElement } from "@angular/core";
 import { By } from "@angular/platform-browser";
 import { Component, ViewChild } from "@angular/core";
+import { RestDataSource } from "../app/model/rest.datasource";
+import { Observable, Subscribable } from "rxjs/Observable";
+import "rxjs/add/observable/from";
+import { Injectable } from "@angular/core";
+import { Subscriber } from "rxjs/Subscriber";
 
+@Injectable()
+class MockDataSource {
+   public data = [
+    new Product(1, "test1", "Piłka nożna", 100),
+    new Product(2, "test2", "Szachy", 100),
+    new Product(3, "test3", "Piłka nożna", 100)
+  ];
 
-@Component({
-  template: `<first [pa-model]="model"></first>`
-})
-class TestComponent {
-  constructor(public model: Model) { }
+  public getData(): Observable<Product[]> {
 
-  @ViewChild(FirstComponent)
-  FirstComponent: FirstComponent;
+    return new Observable<Product[]>((obs) => {
+      setTimeout(this.timeOutHandler(obs), 10000);
+    })
+  }
 
+  timeOutHandler(obs) {
+    return obs.next(this.data);
+  }
 }
 
 describe("FirstComponent", () => {
-  let fixture: ComponentFixture<TestComponent>;
+  let fixture: ComponentFixture<FirstComponent>;
   let component: FirstComponent;
-  let debugElement: DebugElement;
-  let bindingElement: HTMLSpanElement;
-  let divElement: HTMLDivElement;
-
-  let mockRepository = {
-    getProducts: function () {
-      return [
-        new Product(1, "test1", "Piłka nożna", 100),
-        new Product(2, "test2", "Szachy", 100),
-        new Product(3, "test3", "Piłka nożna", 100)
-      ]
-    }
-  };
-
-
+  let dataSource = new MockDataSource();
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [FirstComponent, TestComponent],
-      providers: [{ provide: Model, useValue: mockRepository }]
+      declarations: [FirstComponent],
+      providers: [{ provide: RestDataSource, useValue: dataSource }]
     });
 
     TestBed.compileComponents().then(() => {
-      fixture = TestBed.createComponent(TestComponent);
-      component = fixture.componentInstance.FirstComponent;
-      debugElement = fixture.debugElement.query(By.directive(FirstComponent));
+      fixture = TestBed.createComponent(FirstComponent);
+      component = fixture.componentInstance;
     });
     
 
   }));
 
-  it("Otrzymanie modelu za pomocą właściwości danych wejściowych", () => {
-    component.category = "Szachy";
+  it("Przeprowadzenie operacji asynchronicznej", () => {
+    dataSource.data.push(new Product(100, "test100", "Piłka nożna", 100));
+    component.category = "Piłka nożna";
     fixture.detectChanges();
-    let products = mockRepository.getProducts().filter(p => p.category == component.category);
-    let componentProducts = component.getProducts();
-    for (let i = 0; i < componentProducts.length; i++) {
-      expect(componentProducts[i]).toEqual(products[i]);
-    }
-    expect(debugElement.query(By.css("span")).nativeElement.textContent).toContain(products.length);
+    fixture.whenStable().then(() => {
+      expect(component.getProducts().length).toBe(3);
+    })
   });
   
 });
