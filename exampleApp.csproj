@@ -55,6 +55,7 @@
     <None Remove="ClientApp\src\app\ondemand\ondemand.component.ts" />
     <None Remove="ClientApp\src\app\ondemand\ondemand.module.ts" />
     <None Remove="ClientApp\src\app\ondemand\second.component.ts" />
+    <None Remove="ClientApp\src\tests\attr.directive.spec.ts" />
     <None Remove="ClientApp\src\tests\first.component.spec.ts" />
     <None Remove="ClientApp\src\tests\frameworkTest.spec.ts" />
   </ItemGroup>
@@ -89,6 +90,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\ondemand\ondemand.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\ondemand\ondemand.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\ondemand\second.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\tests\attr.directive.spec.ts" />
     <TypeScriptCompile Include="ClientApp\src\tests\first.component.spec.ts" />
     <TypeScriptCompile Include="ClientApp\src\tests\frameworkTest.spec.ts" />
   </ItemGroup>
